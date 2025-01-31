@@ -44,6 +44,10 @@ const Home = () => {
           text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
       `}</style>
+            <div className="header">
+                <div className="coding-font">shannon</div>
+            </div>
+
         </div>
     );
 

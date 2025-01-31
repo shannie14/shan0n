@@ -9,10 +9,19 @@ body {
     /* Fallback background */
 }
 
+.row-simple {
+    flex-direction: row;
+}
+
 .white-container {
     background: white !important;
     width: 100%;
     height: 100vh;
+}
+
+.coding-font {
+    font-family: "Fira Code", serif;
+    color: white
 }
 
 .bodyStacked {
@@ -26,19 +35,16 @@ body {
     height: 100vh;
 }
 
-.row-simple {
-    flex-direction: row;
-}
-
 .header {
-    font-family: "Lato", serif;
-    background-color: white;
     height: 3em;
+    padding: 1em;
     display: flex;
-    justify-content: center;
-    font-size: 1em;
-    letter-spacing: 2px;
-    font-weight: 600;
+    justify-content: left;
+    font-size: 1.75em;
+    /* letter-spacing: 2px; */
+    font-family: "Fira Code", serif;
+    color: white;
+  
 }
 
 .opener {
@@ -148,10 +154,6 @@ details pre {
 }
 
 
-
-
-
-
 /* plan */
 .plan-grid {
     display: flex;
@@ -177,9 +179,8 @@ details pre {
 @media screen and (max-width: 414px) {
 
     .header {
-        font-size: 0.75em;
-        color: #1b3b6f;
-        border-bottom: 4px dotted #1b3b6f;
+    justify-content: center;
+        
     }
 
     .opener {
