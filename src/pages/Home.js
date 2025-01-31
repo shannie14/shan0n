@@ -1,54 +1,76 @@
 import { useState, useEffect } from "react";
 
+import Projects from '../components/Projects';
+
 //style
 import '../components/styleSheets/sk.css';
+import { BsJustify } from "react-icons/bs";
 
 const Home = () => {
 
-    const [bgImage, setBgImage] = useState("");
+    const [headerImage, setHeaderImage] = useState("");
+    const [copied, setCopied] = useState(false);
 
     useEffect(() => {
-        const updateBackground = () => {
-            if (window.innerWidth < 768) {
-                setBgImage("https://greattakes.s3.us-east-2.amazonaws.com/sk/mobile_BG.png");
+        const updateHeader = () => {
+            if (window.innerWidth < 429) {
+                setHeaderImage("https://greattakes.s3.us-east-2.amazonaws.com/sk/mobile_header.png");
             } else {
-                setBgImage("https://greattakes.s3.us-east-2.amazonaws.com/sk/web_BG.png");
+                setHeaderImage("https://greattakes.s3.us-east-2.amazonaws.com/sk/web_header.png");
             }
         };
-
-        updateBackground(); // Set initial background
-        window.addEventListener("resize", updateBackground);
-
-        return () => window.removeEventListener("resize", updateBackground);
+        updateHeader();
+        window.addEventListener("resize", updateHeader);
+        return () => window.removeEventListener("resize", updateHeader);
     }, []);
 
+    const copyToClipboard = () => {
+        navigator.clipboard.writeText("shannonkendall14@gmail.com")
+            .then(() => {
+                setCopied(true);
+                setTimeout(() => setCopied(false), 2000); // Hide notification after 2 seconds
+            })
+            .catch(err => console.error("Failed to copy:", err));
+    };
 
     return (
-        <div className="background">
-            {/* <div className="content">Responsive Background</div> */}
-            <style jsx>{`
-        .background {
-          width: 100vw;
-          height: 100vh;
-          background: url(${bgImage}) no-repeat center center / cover;
-          transition: background 0.3s ease-in-out;
-        }
-        .content {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: 100%;
-          color: white;
-          font-size: 2rem;
-          font-weight: bold;
-          text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-      `}</style>
-            <div className="header">
-                <div className="coding-font">shannon</div>
+        <div >
+            <div className="header" style={{ backgroundImage: `url(${headerImage})` }}>
+
+                <div className="email" onClick={copyToClipboard} style={{ cursor: "pointer" }}>
+                    shannonkendall14@gmail.com
+                </div>
+                <div>Portfolio:  </div>
+            </div >
+
+            {copied && (
+                <div className="copied-popup" style={{
+                    fontFamily: '"Fira Code", serif',
+                    position: "fixed",
+                    top: "20px",
+                    left: "50%",
+                    width: "300px",
+                    textAlign: "center",
+                    transform: "translateX(-50%)",
+                    background: "#4CAF50",
+                    color: "white",
+                    padding: "10px 20px",
+                    borderRadius: "5px",
+                    boxShadow: "0px 0px 10px rgba(0, 0, 0, 0.1)",
+                    zIndex: 1000
+                }}>
+                    Email copied to clipboard!
+                </div>
+            )
+            }
+
+            <div style={{ width: "100%", overflow: "hidden", padding: "0", margin: "0" }}>
+                <Projects />
             </div>
 
-        </div>
+            <div className="footerQuote">"Simplicity is the ultimate sophistication." – Leonardo da Vinci</div>
+
+        </div >
     );
 
 };

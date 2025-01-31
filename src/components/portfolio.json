@@ -1,0 +1,17 @@
+[
+  {
+    "app": "Period.food",
+    "description": "A tool for females to make hormone-balancing choices based on the current day of their cycle.",
+    "link": "https://www.period.food/"
+  },
+  {
+    "app": "Dashboard",
+    "description": "Dashboard of media assets and performance metrics.",
+    "link": "https://mb-front.vercel.app/"
+  },
+  {
+    "app": "Gallery",
+    "description": "Archive photos with shared family access.",
+    "link": "https://kteam.app/"
+  }
+]
