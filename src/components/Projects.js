@@ -5,22 +5,29 @@ import { Card, CardContent, Typography, Button } from "@mui/material";
 const projects = [
     {
         app: "Period.food ",
-        type: "Full-Stack Web App (React, Node.js, MongoDB)",
+        foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
         description: "A tool for females to make hormone-balancing choices based on the current day of their cycle.",
         link: "https://www.period.food/",
     },
     {
-        app: "Dashboard",
-        description: "Listing of media assets and performance metrics.",
-        type: "Full-Stack Web App (React, Node.js, MongoDB)",
-        link: "https://mb-front.vercel.app/",
+        app: "The Red Carpet Lookbook",
+        description: "Browse and search for celebrity red carpet looks.",
+        foundation: "Full-Stack Web App (React, Node.js, S3)",
+        link: "https://oscars-peach.vercel.app/",
     },
     {
-        app: "Gallery",
-        description: "Archive photos with shared family access.",
-        type: "Full-Stack Web App (React, Node.js, S3)",
-        link: "https://kteam.app/",
+        app: "Script BreakDown",
+        description: " Generates production tools such shooting schedule, DOOD, prop and wardobe lists, etc. from PDF of film script. ",
+        foundation: "O&O AI model",
+        link: "/script",
     },
+    {
+        app: "Dashboard",
+        description: "Listing of media assets and performance metrics.",
+        foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
+        link: "https://mb-front.vercel.app/",
+    },
+
 ];
 
 const Projects = () => {
@@ -46,7 +53,7 @@ const Projects = () => {
                                 </Typography>
 
                                 <Typography className="custom-card-description" >
-                                    {project.type}
+                                    {project.foundation}
                                 </Typography>
 
 
