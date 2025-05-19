@@ -1,94 +1,72 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { Card, CardContent, Typography, Button } from "@mui/material";
 
 const projects = [
     {
-        app: "Period.food ",
+        app: "Period.food",
         foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
-        description: "A tool for females to make hormone-balancing choices based on the current day of their cycle.",
+        description:
+            "A tool for females to make hormone-balancing choices based on the current day of their cycle.",
         link: "https://www.period.food/",
     },
     {
         app: "The Red Carpet Lookbook",
-        description: "Browse and search for celebrity red carpet looks.",
         foundation: "Full-Stack Web App (React, Node.js, S3)",
+        description: "Browse and search for celebrity red carpet looks.",
         link: "https://oscars-peach.vercel.app/",
     },
     {
-        app: "Script BreakDown",
-        description: " Generates production tools such shooting schedule, DOOD, prop and wardobe lists, etc. from PDF of film script. ",
+        app: "Film Script BreakDown",
         foundation: "O&O AI model",
+        description:
+            "Generates production tools such shooting schedule, DOOD, prop and wardrobe lists, etc. from PDF of film script.",
         link: "/script",
     },
     {
         app: "Dashboard",
-        description: "Listing of media assets and performance metrics.",
         foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
+        description:
+            "Listing of media assets and performance metrics.",
         link: "https://mb-front.vercel.app/",
     },
-
 ];
 
-const Projects = () => {
-    return (
-        <div style={{ paddingLeft: '2.5%', margin: '0px', maxWidth: '95%' }}>
-
-            <div >
-                {projects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: index * 0.2, duration: 0.5 }}
-                    >
-                        <Card className="custom-card">
-                            <CardContent className="custom-card-content">
-                                <Typography className="custom-card-title" style={{ fontWeight: '800' }} gutterBottom>
-                                    {project.app}
-                                </Typography>
-
-                                <Typography className="custom-card-description" style={{ marginBottom: '5px', fontWeight: '600' }}>
-                                    {project.description}
-                                </Typography>
-
-                                <Typography className="custom-card-description" >
-                                    {project.foundation}
-                                </Typography>
-
-
-                                <Button
-                                    variant="contained"
-                                    color="primary"
-                                    fullWidth
-                                    className="custom-card-button"
-                                    onClick={() => window.open(project.link, "_blank")}
-                                >
-                                    Visit Site
-                                </Button>
-                            </CardContent>
-                        </Card>
-                    </motion.div>
-                ))}
-            </div>
-
-            {/* Extra Animated Element */}
+const Projects = () => (
+    <div className="pl-[2.5%] m-0 max-w-[95%]">
+        {projects.map((project, idx) => (
             <motion.div
-                className="mt-12 text-center text-gray-300 text-lg"
-                initial={{ scale: 0.8, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                transition={{ duration: 0.8, ease: "easeInOut" }}
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.2, duration: 0.5 }}
             >
+                <div className=" bg-[#D1E231] rounded-2xl shadow-[3px_3px_10px_rgba(0,0,0,0.3)] transition-shadow duration-300 ease-in-out hover:shadow-[6px_6px_15px_rgba(0,0,0,0.5)] mb-[1.53rem]">
 
-                <motion.div
-                    className="w-12 h-12 bg-blue-500 rounded-full mx-auto"
-                    animate={{ rotate: 360 }}
-                    transition={{ repeat: Infinity, duration: 3, ease: "linear" }}
-                />
+                    <div className="p-4">
+
+                        <h2 className="font-mono font-extrabold text-xl sm:text-4xl text-black mb-3">
+                            {project.app}
+                        </h2>
+
+                        <p className="font-mono text-sm sm:text-base mb-[5px] font-semibold text-black mb-3">
+                            {project.description}
+                        </p>
+
+                        <p className="font-mono text-sm sm:text-base text-black mb-3">
+                            {project.foundation}
+                        </p>
+
+                        <button
+                            onClick={() => window.open(project.link, "_blank")}
+                            className="w-full mt-[10px] font-mono font-semibold text-xs sm:text-base text-[#D1E231] bg-black py-2 rounded-md hover:opacity-90"
+                        >
+                            Visit Site
+                        </button>
+                    </div>
+                </div>
             </motion.div>
-        </div>
-
-    );
-};
+        ))}
+    </div>
+);
 
 export default Projects;

@@ -4,7 +4,7 @@ import ReactDOM from "react-dom";
 import axios from "axios";
 
 //style
-import '../components/styleSheets/sk.css';
+// import '../components/styleSheets/sk.css';
 
 const ScriptBD = () => {
     const [selectedFile, setSelectedFile] = useState(null);
