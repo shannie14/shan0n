@@ -2,7 +2,7 @@ import React from "react";
 // import FooterMenu from "../components/FooterMenu; ";
 
 //style
-import '../components/styleSheets/sk.css';
+// import '../components/styleSheets/sk.css';
 
 const Dashboard = () => {
     return (
