@@ -14,25 +14,30 @@ const Home = () => {
             description:
                 "A tool for females to make hormone-balancing choices based on the current day of their cycle.",
             link: "https://www.period.food/",
+            photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/pf_mobile.png"
+
         },
         {
             app: "The Red Carpet Lookbook",
             foundation: "Full-Stack Web App (React, Node.js, S3)",
             description: "Browse and search for celebrity red carpet looks.",
             link: "https://oscars-peach.vercel.app/",
+            photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/oscar_mobile.png"
         },
         {
             app: "Film Script BreakDown",
             foundation: "O&O AI model",
             description:
-                "Generates production tools such shooting schedule, D.O.O.D., prop and wardrobe lists, etc., from a PDF script.",
+                "Generates production tools such as shooting schedules, D.O.O.D., prop & wardrobe lists, etc., from a PDF script.",
             link: "/script",
+            photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png"
         },
         {
             app: "Dashboard",
             foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
             description: "Listing of media assets and performance metrics.",
             link: "https://mb-front.vercel.app/",
+            photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png"
         },
     ];
 
@@ -112,11 +117,30 @@ const Home = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: i * 0.15, duration: 0.5 }}
                         >
-                            <h3 className="mb-2 text-2xl font-bold text-[#fff] tracking-wide">{proj.app}</h3>
+                            <div className="flex flex-col flex-1 ">
 
-                            <p className="mb-4 font-mono text-sm opacity-80 text-[#D1E231] " >{proj.foundation}</p>
+                                <h3 className="mb-2 text-2xl font-bold text-[#fff] tracking-wide">{proj.app}</h3>
+                                <p className="text-base text-white leading-relaxed mb-4">
+                                    {proj.description}
+                                </p>
 
-                            <p className="mb-6 text-base leading-relaxed text-[#fff] ">{proj.description}</p><span className="inline-block font-semibold text-[#D1E231] hover:underline text-mono ">View Project →</span>
+                                <div className="flex flex-row items-center gap-6">
+
+                                    <div className="flex flex-col gap-4 text-white ">
+                                        <p>Architecture</p>
+                                        <p className="text-sm e"><span className="font-bold">Current:</span><br></br>{proj.foundation}</p><p className="text-sm e"><span className="font-bold">Future:</span><br></br>{proj.foundation}</p>
+                                    </div>
+                                    <img
+                                        src={proj.photo}
+                                        alt={`${proj.app} screenshot`}
+                                        className="max-h-[200px] object-contain"
+                                    />
+
+                                </div>
+
+                                <span className="inline-block font-semibold text-[#D1E231] hover:underline text-mono mt-4 ">View Project →</span>
+
+                            </div>
                         </motion.a>
                     ))}
                 </div>
