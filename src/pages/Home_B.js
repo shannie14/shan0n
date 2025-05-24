@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Mail, LayoutGrid } from "lucide-react";
+import { Mail, LayoutGrid, MousePointerClick } from "lucide-react";
+
+import { Link } from "react-router-dom";
+
 import { motion } from "framer-motion";
 import ProjectsCarousel from "../components/Home_B_Projects";
 
@@ -22,7 +25,7 @@ export default function Home() {
         <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#fdfbf5] to-white text-neutral-900 font-josefin">
 
 
-            <header className="relative h-[45vh] overflow-hidden">
+            <header className="relative h-[25vh] overflow-hidden">
                 {/* Responsive Background Image */}
                 <div className="absolute inset-0">
 
@@ -46,13 +49,20 @@ export default function Home() {
                         A whip-smart builder at the intersection of art and code." <br></br>– ChatGPT
                     </p>
                 </motion.div>
-
-
-                {/* Optional accent border on bottom */}
-                {/* <div className="absolute bottom-0 w-full h-[3px] bg-gradient-to-r from-[#fceabb] via-[#f8b500] to-[#fceabb]" /> */}
             </header>
 
+            <Link
+                to="/"
+                aria-label="Switch layout"
+                className="flex items-center justify-center mx-auto transition-colors text-[#000] bg-[#f5e1c2] py-3 px-6 space-x-2 hover:bg-[#e8d3ac] rounded-md"
+            >
+                <span>Prefer a different layout?</span>
+                <MousePointerClick size={24} />
+            </Link>
+
             <ProjectsCarousel />
+
+
 
             {/* ——— Footer Quote ——— */}
             <footer className="text-center py-8">
