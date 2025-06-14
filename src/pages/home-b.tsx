@@ -8,17 +8,18 @@ import ProjectsCarousel from "../components/Home_B_Projects";
 const HomeB: React.FC = () => {
     const [copied, setCopied] = useState(false);
 
-    const handleCopy = () => {
-        copyToClipboard(
-          "shannonkendall14@gmail.com",
-          () => {
-            setCopied(true);
-            setTimeout(() => setCopied(false), 2000);
-          },
-          (err) => console.error("Failed to copy:", err)
-        );
-      };
-
+  const handleCopy = (): void => {
+    copyToClipboard(
+      "shannonkendall14@gmail.com",
+      (): void => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+      },
+      (err: unknown): void => {
+        console.error("Failed to copy:", err);
+      }
+    );
+  };
     return (
         <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#fdfbf5] to-white text-neutral-900 font-josefin">
 
@@ -49,15 +50,27 @@ const HomeB: React.FC = () => {
                 </motion.div>
             </header>
 
-            <Link
-  href="/home-a"
-  className="mt-8 flex justify-center"
->
-  <div className="flex items-center space-x-2 bg-[#f5f5dc] text-black px-4 py-2 rounded-lg shadow-sm hover:bg-[#e6e6c7] transition">
-    <span className="font-medium">Prefer a different layout?</span>
-    <MousePointerClick size={20} />
-  </div>
-</Link>
+            <div className="mt-8 flex justify-center">
+        <button
+          onClick={handleCopy}
+          className="flex items-center space-x-2 bg-[#f5f5dc] text-black px-4 py-2 rounded-lg shadow-sm hover:bg-[#e6e6c7] transition"
+        >
+          <Mail />
+          <span>shannonkendall14@gmail.com</span>
+        </button>
+        {copied && (
+          <div className="fixed top-5 left-1/2 transform -translate-x-1/2 px-5 py-2 bg-[#D1E231] text-black rounded shadow z-50">
+            Email copied to clipboard!
+          </div>
+        )}
+      </div>
+
+      <Link href="/home-a" className="mt-4 flex justify-center">
+        <div className="flex items-center space-x-2 bg-[#f5f5dc] text-black px-4 py-2 rounded-lg shadow-sm hover:bg-[#e6e6c7] transition">
+          <span className="font-medium">Prefer a different layout?</span>
+          <MousePointerClick size={20} />
+        </div>
+      </Link>
 
 
             <ProjectsCarousel />
