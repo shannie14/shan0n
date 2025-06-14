@@ -65,16 +65,19 @@ interface Project {
       return () => window.removeEventListener("resize", updateHeader);
     }, []);
   
-    const handleCopy = () => {
+    const handleCopy = (): void => {
       copyToClipboard(
         "shannonkendall14@gmail.com",
-        () => {
+        (): void => {
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
         },
-        (err) => console.error("Failed to copy:", err)
+        (err: unknown): void => {
+          console.error("Failed to copy:", err);
+        }
       );
     };
+    
   
     return (
       <div className="bg-black min-h-screen flex flex-col">
