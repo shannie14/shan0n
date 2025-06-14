@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { ChevronLeft, ChevronRight, MousePointerClick } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from 'next/image';
 
 const projects = [
     {
@@ -10,15 +11,14 @@ const projects = [
         description:
             "A tool for females to make hormone-balancing choices based on the current day of their cycle.",
         link: "https://www.period.food/",
-        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/pf_mobile.png"
-
+        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/pf_mobile.png",
     },
     {
         app: "The Red Carpet Lookbook",
         foundation: "Full-Stack Web App (React, Node.js, S3)",
         description: "Browse and search for celebrity red carpet looks.",
         link: "https://www.celebritylookbook.com/",
-        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/oscar_mobile.png"
+        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/oscar_mobile.png",
     },
     {
         app: "Film Script BreakDown",
@@ -26,26 +26,26 @@ const projects = [
         description:
             "Generates production tools such as shooting schedules, D.O.O.D., prop & wardrobe lists, etc., from a PDF script.",
         link: "/script",
-        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png"
+        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png",
     },
     {
         app: "Dashboard",
         foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
         description: "Listing of media assets and performance metrics.",
         link: "https://mb-front.vercel.app/",
-        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png"
+        photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png",
     },
 ];
 
 export default function ProjectsCarousel() {
     const [current, setCurrent] = useState(0);
-    const prev = () => setCurrent((i) => (i === 0 ? projects.length - 1 : i - 1));
+    const prev = () =>
+        setCurrent((i) => (i === 0 ? projects.length - 1 : i - 1));
     const next = () =>
         setCurrent((i) => (i === projects.length - 1 ? 0 : i + 1));
 
     return (
         <div className="flex flex-col items-center py-6">
-
             <div className="relative w-[90%] sm:w-full sm:max-w-[650px] mx-auto">
                 {/* ← Prev / Next */}
                 <button
@@ -71,38 +71,44 @@ export default function ProjectsCarousel() {
                         transition={{ duration: 0.6 }}
                         className="bg-white rounded-3xl shadow-2xl p-6 sm:p-8 flex flex-col justify-between w-full"
                     >
-
                         <div className="flex flex-col flex-1 ">
-
                             <h3 className="text-2xl font-semibold text-gray-800 mb-2">
                                 {projects[current].app}
                             </h3>
                             <p className="text-base text-gray-700 leading-relaxed mb-4">
                                 {projects[current].description}
                             </p>
-
                         </div>
-                        <div className="flex flex-row items-center gap-6">
 
+                        <div className="flex flex-row items-center gap-6">
                             <div className="flex flex-col gap-4 ">
                                 <p>Architecture</p>
-                                <p className="text-sm text-gray-500"><span className="font-bold">Current:</span><br></br>
+                                <p className="text-sm text-gray-500">
+                                    <span className="font-bold">Current:</span>
+                                    <br />
                                     {projects[current].foundation}
-                                </p>   <p className="text-sm text-gray-500"><span className="font-bold">Future:</span><br></br>
+                                </p>
+                                <p className="text-sm text-gray-500">
+                                    <span className="font-bold">Future:</span>
+                                    <br />
                                     {projects[current].foundation}
                                 </p>
                             </div>
 
-                            <img
-                                src={projects[current].photo}
-                                alt={`${projects[current].app} screenshot`}
-                                className="max-h-[200px] object-contain ml-auto mr-20"
-                            />
+                            <div className="relative w-1/2 h-[200px]">
+                                <Image
+                                    src={projects[current].photo}
+                                    alt={`${projects[current].app} screenshot`}
+                                    fill
+                                    className="object-contain"
+                                />
+                            </div>
                         </div>
 
-
                         <button
-                            onClick={() => window.open(projects[current].link, "_blank")}
+                            onClick={() =>
+                                window.open(projects[current].link, "_blank")
+                            }
                             className="mt-6 inline-flex w-full items-center justify-center gap-2 bg-[#f5e1c2] text-gray-800 font-medium py-2 rounded-md hover:bg-[#e8d3ac] transition"
                         >
                             View Project <MousePointerClick size={16} />

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Mail, MousePointerClick } from "lucide-react";
 import { motion } from "framer-motion";
 import { copyToClipboard } from "../utils/clipboard";
+import Image from 'next/image';
 
 interface Project {
     app: string;
@@ -189,11 +190,14 @@ interface Project {
                         {proj.foundation}
                       </p>
                     </div>
-                    <img
+                    <div className="relative w-[120px] h-[200px] flex-shrink-0">
+                    <Image
                       src={proj.photo}
                       alt={`${proj.app} screenshot`}
-                      className="max-h-[200px] object-contain"
+                      fill
+                      className="object-contain"
                     />
+                  </div>
                   </div>
   
                   <span className="inline-block font-semibold text-[#D1E231] hover:underline text-mono mt-4">
