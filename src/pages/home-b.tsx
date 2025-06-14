@@ -41,10 +41,10 @@ const HomeB: React.FC = () => {
                 >
 
                     <p className="text-xl md:text-2xl lg:text-3xl font-josefin text-black leading-snug drop-shadow-sm ">
-                        “Creative Technologist with a Producer’s Soul.
+                    &quot;Creative Technologist with a Producer&apos;s Soul.
                     </p>
                     <p className="mt-4 text-base md:text-lg text-black font-josefin font-light italic">
-                        A whip-smart builder at the intersection of art and code." <br></br>– ChatGPT
+                        A whip-smart builder at the intersection of art and code.&quot; <br></br>– ChatGPT
                     </p>
                 </motion.div>
             </header>
