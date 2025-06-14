@@ -2,5 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/home-b": "pages/home-b.js"
+  "/home-a": "pages/home-a.js",
+  "/home-b": "pages/home-b.js",
+  "/script": "pages/script.js"
 }
