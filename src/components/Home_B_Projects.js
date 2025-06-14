@@ -32,7 +32,7 @@ const projects = [
         app: "Dashboard",
         foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
         description: "Listing of media assets and performance metrics.",
-        link: "https://mb-front.vercel.app/",
+        link: "https://lb-front2.vercel.app",
         photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png",
     },
 ];
