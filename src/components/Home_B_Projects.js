@@ -17,7 +17,7 @@ const projects = [
         app: "The Red Carpet Lookbook",
         foundation: "Full-Stack Web App (React, Node.js, S3)",
         description: "Browse and search for celebrity red carpet looks.",
-        link: "https://oscars-peach.vercel.app/",
+        link: "https://www.celebritylookbook.com/",
         photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/oscar_mobile.png"
     },
     {
