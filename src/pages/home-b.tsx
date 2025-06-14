@@ -67,7 +67,7 @@ const HomeB: React.FC = () => {
             {/* ——— Footer Quote ——— */}
             <footer className="text-center py-8">
                 <p className="italic font-serif text-neutral-700">
-                    “Simplicity is the ultimate sophistication.”
+                &quot;Simplicity is the ultimate sophistication.&quot;
                     <span className="block mt-2 font-medium">– Leonardo da Vinci</span>
                 </p>
             </footer>

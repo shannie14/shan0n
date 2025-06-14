@@ -206,7 +206,7 @@ interface Project {
         </main>
   
         <div className="font-mono text-white flex justify-center my-8 w-full px-4">
-          “Simplicity is the ultimate sophistication.” – Leonardo da Vinci
+        &quot;Simplicity is the ultimate sophistication.&quot; – Leonardo da Vinci
         </div>
       </div>
     );

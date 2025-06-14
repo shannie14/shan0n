@@ -45,10 +45,10 @@ export default function Home() {
                        backdrop-blur-md p-6 rounded-2xl shadow-xl border border-white/20"
                     >
                         <p className="text-xl md:text-2xl lg:text-3xl font-playfair text-white leading-snug drop-shadow-sm">
-                            “Creative Technologist with a Producer’s Soul.
+                            &quot;Creative Technologist with a Producer&apos;s Soul.
                         </p>
                         <p className="mt-4 text-base md:text-lg text-gray-300 font-light italic">
-                            A whip-smart builder at the intersection of art and code." <br></br>– ChatGPT
+                            A whip-smart builder at the intersection of art and code.&quot; <br></br>– ChatGPT
                         </p>
                     </div>
                 </motion.div>
@@ -95,7 +95,7 @@ export default function Home() {
             {/* ——— Footer Quote ——— */}
             <footer className="text-center py-8">
                 <p className="italic font-serif text-neutral-700">
-                    “Simplicity is the ultimate sophistication.”
+                    &quot;Simplicity is the ultimate sophistication.&quot;
                     <span className="block mt-2 font-medium">– Leonardo da Vinci</span>
                 </p>
             </footer>
