@@ -4,6 +4,7 @@ import { Mail, LayoutGrid, MousePointerClick } from "lucide-react";
 import { motion } from "framer-motion";
 import { copyToClipboard } from "../utils/clipboard";
 import ProjectsCarousel from "../components/Home_B_Projects";
+import VimeoCarousel from "../components/VimeoCarousel";
 
 const HomeB: React.FC = () => {
     const [copied, setCopied] = useState(false);
@@ -24,7 +25,7 @@ const HomeB: React.FC = () => {
         <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#fdfbf5] to-white text-neutral-900 font-josefin">
 
 
-            <header className="relative h-[25vh] overflow-hidden">
+            <header className="relative h-[15vh] overflow-hidden">
                 {/* Responsive Background Image */}
                 <div className="absolute inset-0">
 
@@ -74,6 +75,7 @@ const HomeB: React.FC = () => {
 
 
             <ProjectsCarousel />
+            <VimeoCarousel />
 
 
 

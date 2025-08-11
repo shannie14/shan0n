@@ -1,8 +1,11 @@
 {
   "/_app": "pages/_app.js",
+  "/home-b": "pages/home-b.html",
+  "/home-a": "pages/home-a.html",
+  "/": "pages/index.html",
+  "/whatevermike-test": "pages/whatevermike-test.html",
+  "/script": "pages/script.html",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/home-a": "pages/home-a.js",
-  "/home-b": "pages/home-b.js",
-  "/script": "pages/script.js"
+  "/404": "pages/404.html"
 }

@@ -9,3 +9,12 @@ body {
     font: lato, sans-serif;
     color: #353839;
 }
+
+h1 {
+    font-size: 1.2rem;
+    color: #D1E231;
+    font-weight: 400;
+    /* bold */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
