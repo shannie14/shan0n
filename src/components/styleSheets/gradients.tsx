@@ -1,0 +1,1 @@
+       <div className="mx-4 py-8 border-b-2 bg-[radial-gradient(80%_60%_at_20%_10%,#ff1dce33_0%,transparent_60%),radial-gradient(80%_60%_at_80%_90%,#22d3ee33_0%,transparent_60%),linear-gradient(180deg,#0a0d18,#0c0f1c)] ring-1 ring-white/10 shadow-[0_10px_40px_-10px_rgba(0,0,0,0.6)]">
