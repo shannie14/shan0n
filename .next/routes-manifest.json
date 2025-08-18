@@ -28,12 +28,6 @@
       "namedRegex": "^/home\\-a(?:/)?$"
     },
     {
-      "page": "/home-b",
-      "regex": "^/home\\-b(?:/)?$",
-      "routeKeys": {},
-      "namedRegex": "^/home\\-b(?:/)?$"
-    },
-    {
       "page": "/script",
       "regex": "^/script(?:/)?$",
       "routeKeys": {},

@@ -11,14 +11,9 @@ type Video = {
   url: string;
 };
 
-/** Accepts:
- *  - YouTube: https://www.youtube.com/watch?v=ID or https://youtu.be/ID
- *  - Vimeo:   https://vimeo.com/ID or https://player.vimeo.com/video/ID
- */
 function getEmbedUrl(url: string): string {
   try {
     const u = new URL(url);
-
     // YouTube
     if (u.hostname.includes("youtube.com")) {
       const id = u.searchParams.get("v");
@@ -44,13 +39,14 @@ function getEmbedUrl(url: string): string {
 }
 
 const videos: Video[] = [
-  { title: "Bros - the series", description: "Producer • 2016", url: "https://vimeo.com/257750168" },
-  { title: "Word To The Trees by whatever mike", description: "Producer • 2021", url: "https://www.youtube.com/watch?v=bmpoazNzOYE" },
+  { title: "Tom Colicchio's The Pantry", description: "Assistant Director & Post-Producer • 2024", url: "https://www.youtube.com/watch?v=oJmy8Wr6Cwo" },
   { title: "Hedgehog", description: "Associate Producer • 2017", url: "https://www.youtube.com/watch?v=7OrVI_qSGw4" },
+  { title: "Bros - the series", description: "Producer & Production Manager • 2016", url: "https://vimeo.com/257750168" },
   { title: "Chocolate City", description: "Production Manager • 2015", url: "https://www.youtube.com/watch?v=3Uiba2NxTtc" },
-  { title: "Tom Colicchio's The Pantry", description: "Assistant Director • 2024", url: "https://www.youtube.com/watch?v=oJmy8Wr6Cwo" },
+  { title: "Word To The Trees by whatever mike", description: "Producer • 2021", url: "https://www.youtube.com/watch?v=bmpoazNzOYE" },
   { title: "Riddle Room", description: "Producer • 2011", url: "https://www.youtube.com/watch?v=RJPL5tYTF54" },
-  { title: "Kissing Booth - festival short", description: "Producer • 2015", url: "https://vimeo.com/78923296" },
+  {title: "Nick News with Linda Ellerbee", description: "Production Intern & Interim Assistant to Ms. Ellerbee (Maternity Leave Cover)", url: "https://vimeo.com/148839918"},
+  { title: "Kissing Booth - festival short", description: "Producer & Editor • 2015", url: "https://vimeo.com/78923296" },
 ];
 
 export default function VideoCarousel() {
@@ -67,23 +63,39 @@ export default function VideoCarousel() {
   const active = useMemo<Video>(() => videos[current] ?? videos[0], [current]);
 
   return (
-    <div className="max-w-[800px] mx-auto w-full px-8">
+    <div className="max-w-[600px] mx-auto w-full px-8">
       <div className="relative">
         {/* Prev / Next */}
-        <button
-          onClick={prev}
-          aria-label="Previous video"
-          className="absolute -left-3 sm:-left-6 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-100 transition"
-        >
-          <ChevronLeft className="size-5 sm:size-6 text-gray-700" />
-        </button>
-        <button
-          onClick={next}
-          aria-label="Next video"
-          className="absolute -right-3 sm:-right-6 top-1/2 -translate-y-1/2 z-10 p-2 sm:p-3 rounded-full bg-white shadow-lg hover:bg-gray-100 transition"
-        >
-          <ChevronRight className="size-5 sm:size-6 text-gray-700" />
-        </button>
+          <button
+            onClick={prev}
+            aria-label="Previous video"
+            className="
+              absolute -left-2 sm:-left-4 top-1/2 -translate-y-1/2 z-10
+              inline-flex items-center justify-center
+              size-7 rounded-full
+              bg-white/90 text-gray-700 shadow-md ring-1 ring-black/5 backdrop-blur
+              transition duration-200 ease-out
+              hover:bg-white
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D1E231] focus-visible:ring-offset-2 focus-visible:ring-offset-black
+              active:scale-95">
+            <ChevronLeft className="size-4 sm:size-5" />
+          </button>
+
+          <button
+            onClick={next}
+            aria-label="Next video"
+            className="
+              absolute -right-2 sm:-right-4 top-1/2 -translate-y-1/2 z-10
+              inline-flex items-center justify-center
+              size-7 rounded-full
+              bg-white/90 text-gray-700 shadow-md ring-1 ring-black/5 backdrop-blur
+              transition duration-200 ease-out
+              hover:bg-white
+              focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D1E231] focus-visible:ring-offset-2 focus-visible:ring-offset-black
+              active:scale-95 " >
+            <ChevronRight className="size-4 sm:size-5" />
+          </button>
+
 
         {/* Slide */}
         <AnimatePresence mode="wait" initial={false}>
@@ -93,11 +105,11 @@ export default function VideoCarousel() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: -40 }}
             transition={{ duration: 0.45 }}
-            className="p-5 sm:p-7"
+            className=""
           >
             <header className="mb-2">
-              <h3 className="text-base sm:text-lg font-semibold text-white">{active.title}</h3>
-              {active.description && <p className="text-sm text-gray-400 mt-1">{active.description}</p>}
+              <h3 className="text-base font-semibold text-white">{active.title}</h3>
+              {active.description && <p className="text-sm text-gray-400 ">{active.description}</p>}
             </header>
 
             {/* 16:9 */}
@@ -116,7 +128,7 @@ export default function VideoCarousel() {
       </div>
 
       {/* Dots */}
-      <div className="flex justify-center gap-2 sm:gap-3 mt-6">
+      <div className="flex justify-center gap-2 sm:gap-3 py-4">
         {videos.map((v, idx) => (
           <button
             key={v.url}

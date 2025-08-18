@@ -2,10 +2,12 @@
   "name": "shan0n",
   "version": "0.1.0",
   "private": true,
+  
+
   "scripts": {
     "build": "next build",
     "start": "next build && next start",
-    "dev":   "next dev"
+    "dev": "next dev"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -32,10 +34,12 @@
     "eslint-config-next": "^15.3.3",
     "postcss": "^8.5.3",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.8.3"
+    "typescript": "^5.9.2"
   },
   "eslintConfig": {
-    "extends": ["next/core-web-vitals"]
+    "extends": [
+      "next/core-web-vitals"
+    ]
   },
   "browserslist": {
     "production": [
