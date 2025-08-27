@@ -66,11 +66,11 @@ export default function Home() {
 
         </div>
 
-        <section id="dev" className="mt-14 sm:mt-20 pt-16 border-t-[6px] border-cadetGray/20 bg-whiteSmoke/70 w-full">
+        <section id="dev" className="mt-14 sm:mt-20 pb-10 pt-16 border-t-[6px] border-cadetGray/20 bg-whiteSmoke/70 w-full">
           <DeveloperShowcase />
         </section>
 
-        <section id="video" className="mt-14 sm:mt-20 pt-10 border-t-[6px] border-cadetGray/20 "> 
+        <section id="video" className="pt-10 border-t-[6px] border-cadetGray/20 "> 
 
           <h2 className="mb-8  uppercase font-[600] tracking-[0.1em] sm:tracking-[0.15em] text-[25px] sm:text-[45px] text-cadetGray/60 text-center">TV / Film / Music Videos  </h2>
           <div className=" w-full mb-8 "><VideoCarousel  /></div>
