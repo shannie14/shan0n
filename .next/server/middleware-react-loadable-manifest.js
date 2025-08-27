@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST='{"pages/home-a.tsx -> ../components/VideoCarousel":{"id":8522,"files":["static/chunks/522.052e0e1155a52b42.js"]}}';
+self.__REACT_LOADABLE_MANIFEST="{}";

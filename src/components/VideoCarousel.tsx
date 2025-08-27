@@ -63,7 +63,7 @@ export default function VideoCarousel() {
   const active = useMemo<Video>(() => videos[current] ?? videos[0], [current]);
 
   return (
-    <div className="max-w-[600px] mx-auto w-full px-8">
+    <div className="max-w-[600px] mx-auto w-full px-6">
       <div className="relative">
         {/* Prev / Next */}
           <button
@@ -108,12 +108,12 @@ export default function VideoCarousel() {
             className=""
           >
             <header className="mb-2">
-              <h3 className="text-base font-semibold text-white">{active.title}</h3>
-              {active.description && <p className="text-sm text-gray-400 ">{active.description}</p>}
+              <h3 className="text-base font-semibold text-cadetGray">{active.title}</h3>
+              {active.description && <p className="text-sm text-cadetGray ">{active.description}</p>}
             </header>
 
             {/* 16:9 */}
-            <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-black">
+            <div className="relative w-full pt-[56.25%] rounded-xl overflow-hidden bg-black ">
               <iframe
                 src={getEmbedUrl(active.url)}
                 className="absolute inset-0 w-full h-full"

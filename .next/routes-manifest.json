@@ -22,10 +22,10 @@
       "namedRegex": "^/(?:/)?$"
     },
     {
-      "page": "/home-a",
-      "regex": "^/home\\-a(?:/)?$",
+      "page": "/home",
+      "regex": "^/home(?:/)?$",
       "routeKeys": {},
-      "namedRegex": "^/home\\-a(?:/)?$"
+      "namedRegex": "^/home(?:/)?$"
     },
     {
       "page": "/script",

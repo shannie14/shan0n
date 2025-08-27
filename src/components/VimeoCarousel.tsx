@@ -68,7 +68,7 @@ export default function VimeoCarousel() {
   const translatePct = (startIndex * 100) / itemsPerView;
 
   return (
-    <section className="py-6">
+    <section className="py-2">
       <div className="mx-auto w-full max-w-[1080px] px-4">
         <div className="relative overflow-hidden rounded-2xl">
           {/* Buttons */}
@@ -88,10 +88,10 @@ export default function VimeoCarousel() {
           </button>
 
           {/* Track */}
-          <div
-            className="flex transition-transform duration-500 ease-in-out will-change-transform"
-            style={{ transform: `translateX(-${translatePct}%)` }}
-          >
+   <div
+  className="flex transition-transform duration-500 ease-in-out will-change-transform gap-4"
+  style={{ transform: `translateX(-${translatePct}%)` }}
+>
             {vimeoIds.map(id => (
               <div
                 key={id}

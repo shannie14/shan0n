@@ -10,14 +10,14 @@ type resumeAProps = {
 
 const resumeA: React.FC<resumeAProps> = ({ onOpenResume, className = "" }) => {
   return (
-    <div className={`text-center mx-auto px-4 max-w-3xl ${className}`}>
+    <div className={`bg-cadetGray/40 hover:bg-bone text-babypowder text-center mt-4 mx-auto max-w-[150px] rounded-lg ${className}`}>
       <button
         type="button"
         onClick={onOpenResume}
-        className="inline-flex items-center gap-2 text-[#FF1DCE] hover:text-[#D1E231] focus:outline-none"
+        className="inline-flex items-center gap-2 pt-2  focus:outline-none text-[14px]"
         aria-label="Download resume"
       >
-        <Download className="size-4" aria-hidden="true" />
+        <Download className="size-4 " aria-hidden="true" />
         <span>Download C.V.</span>
       </button>
     </div>
