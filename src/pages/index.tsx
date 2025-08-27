@@ -1,11 +1,11 @@
 // src/pages/index.tsx
 import React from 'react';
-import HomeA from '../pages/home-a'
+import HomeDC from './home'
 
 export default function Home() {
   return (
     <main >
-      <HomeA />
+      <HomeDC />
     </main>
   );
 }

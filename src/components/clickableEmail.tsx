@@ -11,6 +11,8 @@ type Props = {
   toastDurationMs?: number;
 };
 
+
+
 export default function ClickableEmail({
   email = 'shannonkendall14@gmail.com',
   label,
@@ -25,13 +27,13 @@ export default function ClickableEmail({
       <button
         type="button"
         onClick={() => copy(email)}
+    
         className={[
-          'text-lg sm:text-xl mt-4 flex items-center rounded-md hover:bg-pink-600',
-          'transition-colors tracking-wider font-mono px-2 py-1',
+          'text-cadetGray/60 text-lg sm:text-xl mt-4 flex items-center rounded-md hover:bg-bone hover:text-white ',
+          'transition-colors tracking-wider px-2 py-1',
           className,
         ].join(' ')}
-        aria-label={`Copy ${email} to clipboard`}
-      >
+        aria-label={`Copy ${email} to clipboard`}>
         <Mail size={iconSize} />
         <span className="ml-2">{label ?? email}</span>
       </button>
