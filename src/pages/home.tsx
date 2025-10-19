@@ -19,7 +19,7 @@ export default function Home() {
        <main className="flex flex-col">
         <HeroTiles />
   
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center mb-4 ">
         <Image
           src="https://greattakes.s3.us-east-2.amazonaws.com/SK_beige.png"
           alt="Shannon"
@@ -43,7 +43,7 @@ export default function Home() {
               onClick={() => setIsResumeOpen(false)}
             >
               <div
-                className="relative bg-white rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-1/2 h-3/4"
+                className=" relative bg-white rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-1/2 h-3/4"
                 onClick={(e) => e.stopPropagation()}
               >
                 <button
@@ -66,19 +66,19 @@ export default function Home() {
 
         </div>
 
-        <section id="dev" className="mt-14 sm:mt-20 pb-10 pt-16 border-t-[6px] border-cadetGray/20 bg-whiteSmoke/70 w-full">
-          <DeveloperShowcase />
-        </section>
-
         <section id="video" className="pt-10 border-t-[6px] border-cadetGray/20 "> 
 
-          <h2 className="mb-8  uppercase font-[600] tracking-[0.1em] sm:tracking-[0.15em] text-[25px] sm:text-[45px] text-cadetGray/60 text-center">TV / Film / Music Videos  </h2>
+          <h2 className="mb-8  uppercase font-[600] tracking-[0.1em] sm:tracking-[0.15em] text-[25px] sm:text-[45px] text-cadetGray/60 text-center">TV / Film / Music Videos </h2>
           <div className=" w-full mb-8 "><VideoCarousel  /></div>
 
           <h2 className="uppercase font-[600] tracking-[0.1em] sm:tracking-[0.15em] text-[25px] sm:text-[45px] text-cadetGray/60 text-center">Marketing Content  </h2>
           <p className="text-center text-cadetGray/80 mt-0 mb-4">Showcase of editing skills.</p>
           <div className=" w-full mb-16 "><VimeoCarousel  /></div>
 
+        </section>
+
+                <section id="dev" className="mt-14 sm:mt-20 pb-10 pt-16 border-t-[6px] border-cadetGray/20 bg-whiteSmoke/70 w-full">
+          <DeveloperShowcase />
         </section>
       
       </main>

@@ -24,14 +24,14 @@ export const devProjects = [
     link: "https://www.celebritylookbook.com/",
     photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/oscar_mobile.png",
   },
-  {
-    app: "Film Script BreakDown",
-    foundation: "O&O AI model",
-    description:
-      "Generates production tools such as shooting schedules, D.O.O.D., prop & wardrobe lists, etc., from a PDF script.",
-    link: "/script",
-    photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png",
-  },
+  // {
+  //   app: "Film Script BreakDown",
+  //   foundation: "O&O AI model",
+  //   description:
+  //     "Generates production tools such as shooting schedules, D.O.O.D., prop & wardrobe lists, etc., from a PDF script.",
+  //   link: "/script",
+  //   photo: "https://greattakes.s3.us-east-2.amazonaws.com/sk/hold_mobile.png",
+  // },
   {
     app: "Dashboard",
     foundation: "Full-Stack Web App (React, Node.js, MongoDB)",

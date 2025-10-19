@@ -25,7 +25,7 @@ type Props = {
 export default function DeveloperShowcase({
   projects = devProjects,     // <-- default to your data
   className = '',
-  title = 'Digital Portfolio',
+  title = 'Developer Portfolio',
   subtitle,
 }: Props) {
   // Helpful dev-time hint if somehow empty:

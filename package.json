@@ -2,8 +2,6 @@
   "name": "shan0n",
   "version": "0.1.0",
   "private": true,
-  
-
   "scripts": {
     "build": "next build",
     "start": "next build && next start",
@@ -27,6 +25,7 @@
     "vercel": "^39.4.2"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "autoprefixer": "^10.4.21",

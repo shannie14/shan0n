@@ -15,13 +15,13 @@ const projects = [
         description: "Browse and search for celebrity red carpet looks.",
         link: "https://oscars-peach.vercel.app/",
     },
-    {
-        app: "Film Script BreakDown",
-        foundation: "O&O AI model",
-        description:
-            "Generates production tools such shooting schedule, DOOD, prop and wardrobe lists, etc. from PDF of film script.",
-        link: "/script",
-    },
+    // {
+    //     app: "Film Script BreakDown",
+    //     foundation: "O&O AI model",
+    //     description:
+    //         "Generates production tools such shooting schedule, DOOD, prop and wardrobe lists, etc. from PDF of film script.",
+    //     link: "/script",
+    // },
     {
         app: "Dashboard",
         foundation: "Full-Stack Web App (React, Node.js, MongoDB)",
