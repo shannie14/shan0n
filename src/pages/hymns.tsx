@@ -54,7 +54,7 @@ export default function HymnsPage() {
 
         <div className="space-y-6">
           {filtered.map((item) => {
-            const audioUrl = `${audioBasePath}${item.file}`;
+            const audioUrl = `${audioBasePath}${encodeURIComponent(item.file)}`;
             return (
               <article
                 key={`${item.hymn}-${item.title}`}
