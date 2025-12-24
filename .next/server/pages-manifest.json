@@ -1,6 +1,13 @@
 {
   "/_app": "pages/_app.js",
-  "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/hymns": "pages/hymns.js"
+  "/_error": "pages/_error.js",
+  "/api/send-link": "pages/api/send-link.js",
+  "/game": "pages/game.html",
+  "/home": "pages/home.html",
+  "/hymns": "pages/hymns.html",
+  "/": "pages/index.html",
+  "/script": "pages/script.html",
+  "/whatevermike-test": "pages/whatevermike-test.html",
+  "/404": "pages/404.html"
 }
