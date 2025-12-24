@@ -10,11 +10,11 @@ type Hymn = {
   file: string;
 };
 
-const audioBasePath = '/hymns/'; // drop MP3 files into public/hymns or point to your CDN base URL
+const audioBasePath = '/hymns/'; 
 
 export default function HymnsPage() {
-  const [query, setQuery] = useState('');
 
+  const [query, setQuery] = useState('');
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return hymns as Hymn[];
@@ -28,16 +28,48 @@ export default function HymnsPage() {
     });
   }, [query]);
 
+  // request link functionality
+  const [shareLink, setShareLink] = useState('')
+  const [sending, setSending] = useState(false)
+  const [sent, setSent] = useState(false)
+
+  const handleSendLink = async () => {
+    if (!shareLink) return
+    setSending(true)
+
+    try {
+      const res = await fetch('/api/send-link', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ link: shareLink }),
+      })
+
+      if (res.ok) {
+        setSent(true)
+        setShareLink('')
+      } else {
+        alert('Failed to send link.')
+      }
+    } catch {
+      alert('Error sending link.')
+    } finally {
+      setSending(false)
+    }
+  }
+
+
   return (
     <main className="min-h-screen bg-babypowder text-gray-900">
       <div className="max-w-5xl mx-auto px-4 py-12">
+
         <header className="mb-2">
           <h1 className="font-semibold text-cadetGray mt-2">Daily Hymns</h1>
         </header>
 
-        <div className="mb-6">
-          <label className="block text-sm font-medium text-cadetGray/80 mb-2" htmlFor="hymn-search">
-            Search by title, hymn number, or video number
+      {/* search box */}
+        <div className="mb-6 p-5 bg-[#6082B6]/50 rounded-md">
+          <label className="block text-sm font-medium text-[#ffffff] mb-2" htmlFor="hymn-search">
+            <span className="text-lg text-[#FFFDD0]">Search</span> by title, hymn number, or video number
           </label>
           <input
             id="hymn-search"
@@ -51,6 +83,39 @@ export default function HymnsPage() {
             {filtered.length} {filtered.length === 1 ? 'result' : 'results'}
           </p>
         </div>
+
+        {/* request */}
+        <div className="mb-6 p-5 bg-[#6082B6]/50 rounded-md">
+            <label className=" block text-sm font-medium text-[#ffffff] mb-2" htmlFor="hymn-link"><span className="text-lg text-[#FFFDD0]">Request</span> a hymn to be added
+            </label>
+
+            <div className="flex gap-2">
+              <input
+                id="hymn-link"
+                type="url"
+                value={shareLink}
+                onChange={(e) => setShareLink(e.target.value)}
+                placeholder="Paste a YouTube link here"
+                className="w-full rounded-md border border-cadetGray/30 bg-white px-3 py-2 text-sm text-gray-900 shadow-sm focus:outline-none focus:ring-2 focus:ring-cadetGray/50"
+              />
+
+              <button
+                onClick={handleSendLink}
+                disabled={sending || !shareLink}
+                className="shrink-0 rounded-md bg-cadetGray px-4 py-2 text-sm font-medium text-white shadow
+                          hover:bg-cadetGray/90 disabled:opacity-50"
+              >
+                {sending ? 'Sending…' : 'Send'}
+              </button>
+            </div>
+
+          {sent && (
+            <p className="text-xs text-[#FFFDD0] mt-1">
+              Thanks! Your link has been sent and will be added soon!
+            </p>
+          )}
+        </div>
+
 
         <div className="space-y-6">
           {filtered.map((item) => {
